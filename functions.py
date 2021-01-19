@@ -8,7 +8,7 @@ class ChangeOffice():
         self.api_urlEUR = "https://api.exchangeratesapi.io/latest?base=EUR"
 
     def currencyExchange(self,currencyExchange):
-        if operation == "dolar":
+        if operation == "dollar":
             response = requests.get(self.api_urlUSD)
             response = json.loads(response.text)
             try:
@@ -22,7 +22,7 @@ class ChangeOffice():
             response = requests.get(self.api_urlEUR)
             response = json.loads(response.text)
             try:
-                quantity = int(input("Miktar: "))
+                quantity = int(input("Quantity: "))
                 result =  int(quantity * response["rates"]["TRY"])
                 print("Lira rate against Euro.",response["rates"]["TRY"] )
                 print(f"{quantity} Euro {result} is Lira.")
@@ -46,5 +46,5 @@ class ChangeOffice():
             else:
                 print("Incorrect operation")
 
-doviz = ChangeOffice()
+currency = ChangeOffice()
 
