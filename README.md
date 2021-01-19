@@ -1,4 +1,5 @@
 # Change Office
 
-#### I am in development in the Python language, trying to practice as much as possible. 
-#### This Simple Program only trades in Dollars and Euros.
+#### Python dilinde gelişme aşamasındayım, mümkün olduğunca çok pratik yapmaya çalışıyorum.
+
+#### Bu Basit Program yalnızca Dolar, Euro ve TL cinsinden işlem yapar.
