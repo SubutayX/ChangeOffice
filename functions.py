@@ -7,44 +7,44 @@ class ChangeOffice():
         self.api_urlUSD = "https://api.exchangeratesapi.io/latest?base=USD"
         self.api_urlEUR = "https://api.exchangeratesapi.io/latest?base=EUR"
 
-    def dovizBoz(self,islem):
-        if islem == "dolar":
+    def currencyExchange(self,currencyExchange):
+        if operation == "dolar":
             response = requests.get(self.api_urlUSD)
             response = json.loads(response.text)
             try:
-                bozulan = int(input("Miktar: "))
-                result =  int(bozulan * response["rates"]["TRY"])
-                print("Güncel Lira karşısında Dolar kuru.",response["rates"]["TRY"] )
-                print(f"{bozulan} Dolar {result} TL 'dir.")
+                quantity = int(input("Quantity: "))
+                result =  int(quantity * response["rates"]["TRY"])
+                print("Lira rate against Dollar.",response["rates"]["TRY"] )
+                print(f"{quantity} Dolar {result} is Lira.")
             except NameError:
-                print("İnternet Bağlantınız Yok, işlem gerçekleştirilemedi...")                
-        elif islem == "euro":
+                print("No Internet Connection, action could not be performed ...")                
+        elif operation == "euro":
             response = requests.get(self.api_urlEUR)
             response = json.loads(response.text)
             try:
-                bozulan = int(input("Miktar: "))
-                result =  int(bozulan * response["rates"]["TRY"])
-                print("Güncel Lira karşısında Euro kuru.",response["rates"]["TRY"] )
-                print(f"{bozulan} Euro {result} TL 'dir.")
+                quantity = int(input("Miktar: "))
+                result =  int(quantity * response["rates"]["TRY"])
+                print("Lira rate against Euro.",response["rates"]["TRY"] )
+                print(f"{quantity} Euro {result} is Lira.")
             except NameError:
-                print("İnternet Bağlantınız Yok, işlem gerçekleştirilemedi...")
+                print("No Internet Connection, action could not be performed ...")
         
         else:
             pass
         
-    def islemler(self):
+    def transactions(self):
         while True:
-            islem = input("Hangi döviz kurunu bozmak istiyorsunuz -> (dolar,euro) çıkış 'q': ")
-            if islem == "q":
-                print("Menüye Dönülüyor...")
+            operation = input("Which exchange rate do you want to break -> (dollar,euro) exit 'q': ")
+            if operation == "q":
+                print("Returning to the Menu ...")
                 time.sleep(1.5)
                 break
-            if islem == "dolar":
-                doviz.dovizBoz(islem)
-            elif islem == "euro":
-                doviz.dovizBoz(islem)
+            if operation == "dollar":
+                doviz.currencyExchange(currencyExchange)
+            elif operation == "euro":
+                doviz.currencyExchange(currencyExchange)
             else:
-                print("hatalı işlem")
+                print("Incorrect operation")
 
 doviz = ChangeOffice()
 
