@@ -1,48 +1,48 @@
 from functions import ChangeOffice
 import time
 
-doviz = ChangeOffice()
+currency = ChangeOffice()
 print("""
-            Basit Döviz Kuru V1 
+        Simple Exchange Rate V1
             ₺ $ €
 """)
 
 while True:
-    print("\nİşlemlere Başlamadan önce kayıt olun...\n")
+    print("\nRegister Before Starting Transactions ...\n")
 
-    islem = input("Kayıt Olmak İstermisiniz?(evet/hayır/çıkış): ")
-    if islem == "hayır":
+    islem = input("Would you like to register?(yes/no/exit): ")
+    if islem == "no":
         print("Program kapatılıyor...")
         time.sleep(1.5)
         break
-    elif islem == "evet":
+    elif islem == "yes":
         sigInl = []
         passwl = []
 
-        sigIn = input("İsim kayıt: ")
-        passw = input("şifre kayıt: ")
+        sigIn = input("Name register: ")
+        passw = input("Pass register: ")
 
         sigInl.append(sigIn)
         passwl.append(passw)
 
-        sigIn2 = input("isminiz: ")
-        passw2 = input("şifreniz: ")
+        sigIn2 = input("Name: ")
+        passw2 = input("Pass: ")
         
         for h in sigInl:
             for j in passwl:
                 if sigIn2 != h and passw2 == j:
-                    print("İsim yanlış")
+                    print("Name wrong")
                 elif passw2 != j and sigIn2 == h:
-                    print("şifreniz Yanlış")
+                    print("Password wrong")
                 elif sigIn2 != h and passw2 != j:
-                    print("Her ikiside Yanlış")
+                    print("both wrong")
                 elif sigIn2 == h and passw2 == j:
-                    doviz.islemler()
+                    currency.transactions()
                 else:
                     print("Hatalı İşlem") 
-    elif islem == "çıkış":
-        print("Program kapatılıyor...")
+    elif islem == "exit":
+        print("program is closing ...")
         time.sleep(1.5)
         break
     else:
-        print("Hatalı İşlem")
+        print("Incorrect operation")
