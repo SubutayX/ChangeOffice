@@ -12,9 +12,7 @@ while True:
 
     islem = input("Kayıt Olmak İstermisiniz?(evet/hayır/çıkış): ")
     if islem == "hayır":
-        print("Program kapatılıyor...")
-        time.sleep(1.5)
-        break
+        time.sleep(0.5)
     elif islem == "evet":
         sigInl = []
         passwl = []
