@@ -14,7 +14,7 @@ class ChangeOffice():
             try:
                 bozulan = int(input("Miktar: "))
                 result =  int(bozulan * response["rates"]["TRY"])
-                print("Güncel Lira karşısında Dolar kuru.",response["rates"]["TRY"] )
+                print("Güncel Dolar karşısında Lira kuru.",response["rates"]["TRY"] )
                 print(f"{bozulan} Dolar {result} TL 'dir.")
             except NameError:
                 print("İnternet Bağlantınız Yok, işlem gerçekleştirilemedi...")                
@@ -24,7 +24,7 @@ class ChangeOffice():
             try:
                 bozulan = int(input("Miktar: "))
                 result =  int(bozulan * response["rates"]["TRY"])
-                print("Güncel Lira karşısında Euro kuru.",response["rates"]["TRY"] )
+                print("Güncel Euro karşısında Lira kuru.",response["rates"]["TRY"] )
                 print(f"{bozulan} Euro {result} TL 'dir.")
             except NameError:
                 print("İnternet Bağlantınız Yok, işlem gerçekleştirilemedi...")
