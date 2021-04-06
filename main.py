@@ -10,37 +10,24 @@ print("""
 while True:
     print("\nİşlemlere Başlamadan önce kayıt olun...\n")
 
-    islem = input("Kayıt Olmak İstermisiniz?(evet/hayır/çıkış): ")
-    if islem == "hayır":
-        time.sleep(0.5)
-    elif islem == "evet":
-        sigInl = []
-        passwl = []
+    time.sleep(0.5)
 
-        sigIn = input("İsim kayıt: ")
-        passw = input("şifre kayıt: ")
+    sigIn = input("İsim kayıt: ")
+    passw = input("şifre kayıt: ")
 
-        sigInl.append(sigIn)
-        passwl.append(passw)
-
-        sigIn2 = input("isminiz: ")
-        passw2 = input("şifreniz: ")
-        
-        for h in sigInl:
-            for j in passwl:
-                if sigIn2 != h and passw2 == j:
-                    print("İsim yanlış")
-                elif passw2 != j and sigIn2 == h:
-                    print("şifreniz Yanlış")
-                elif sigIn2 != h and passw2 != j:
-                    print("Her ikiside Yanlış")
-                elif sigIn2 == h and passw2 == j:
-                    doviz.islemler()
-                else:
-                    print("Hatalı İşlem") 
-    elif islem == "çıkış":
-        print("Program kapatılıyor...")
-        time.sleep(1.5)
-        break
+    
+    sigIn2 = input("isminiz: ")
+    passw2 = input("şifreniz: ")
+      
+    if sigIn == sigIn2 and passw != passw2:
+        print("şifreniz yanlış")
+        continue
+    elif passw == passw2 and sigIn != sigIn2:
+        print("isminiz yanlış")
+        continue
+    elif passw == passw2 and sigIn == sigIn2:
+        doviz.islemler()
+    elif passw != passw2 and sigIn != sigIn2:
+        print("her ikiside yanlış")
     else:
-        print("Hatalı İşlem")
+            print("Hatalı İşlem")
