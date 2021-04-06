@@ -29,5 +29,9 @@ while True:
         doviz.islemler()
     elif passw != passw2 and sigIn != sigIn2:
         print("her ikiside yanlış")
+    elif islem == "çıkış":
+        print("Program kapatılıyor...")
+        time.sleep(1.5)
+        break
     else:
             print("Hatalı İşlem")
